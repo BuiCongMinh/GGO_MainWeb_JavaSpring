@@ -24,7 +24,7 @@
                 ${newString}
             </h2>
 
-            <button>Submit</button>
+            <a class="btn btn-primary" href="/admin/user">Access admin/user</a>
 
 
             <!-- add bootrap  -->

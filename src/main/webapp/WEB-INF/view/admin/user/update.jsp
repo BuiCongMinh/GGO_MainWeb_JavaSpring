@@ -8,7 +8,7 @@
             <head>
                 <meta charset="UTF-8">
                 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                <title>Create User</title>
+                <title>Update User</title>
 
                 <!-- add link css  -->
                 <link rel="stylesheet" href="/css/main.css">
@@ -22,19 +22,17 @@
                 <div class="container mt-5">
                     <div class="row">
                         <div class="col-md-6 col-12 mx-auto">
-                            <h1>Create User</h1>
+                            <h1>Update User</h1>
                             <hr>
-                            <form:form method="post" action="/admin/user/create" modelAttribute="newUser">
+                            <form:form method="post" action="/admin/user/update" modelAttribute="user">
+                                <div class="form-group mb-3 ">
+                                    <form:input path="id" class="form-control d-none" aria-describedby="emailHelp"
+                                        value="${user.id}" />
+                                </div>
                                 <div class="form-group mb-3 ">
                                     <label for="exampleInputEmail1">Email address: </label>
                                     <form:input path="email" type="email" class="form-control" id="exampleInputEmail1"
-                                        aria-describedby="emailHelp" placeholder="Enter email" />
-                                </div>
-
-                                <div class="form-group mb-3">
-                                    <label for="exampleInputPassword1">Password: </label>
-                                    <form:input path="password" type="password" class="form-control"
-                                        id="exampleInputPassword1" placeholder="Password" />
+                                        aria-describedby="emailHelp" placeholder="Enter email" value="${user.email}" />
                                 </div>
 
                                 <button type="submit" class="btn btn-primary">

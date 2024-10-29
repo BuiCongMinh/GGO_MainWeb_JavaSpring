@@ -8,7 +8,7 @@
             <head>
                 <meta charset="UTF-8">
                 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                <title>Create User</title>
+                <title>UserDetail</title>
 
                 <!-- add link css  -->
                 <link rel="stylesheet" href="/css/main.css">
@@ -21,27 +21,24 @@
             <body>
                 <div class="container mt-5">
                     <div class="row">
-                        <div class="col-md-6 col-12 mx-auto">
-                            <h1>Create User</h1>
+                        <div class="col-md-12 mx-auto">
+                            <h1>Detail User </h1>
                             <hr>
-                            <form:form method="post" action="/admin/user/create" modelAttribute="newUser">
-                                <div class="form-group mb-3 ">
-                                    <label for="exampleInputEmail1">Email address: </label>
-                                    <form:input path="email" type="email" class="form-control" id="exampleInputEmail1"
-                                        aria-describedby="emailHelp" placeholder="Enter email" />
+                            <div class="card" style="width:60%;">
+                                <div class="card-header">
+                                    <h2 class="card-title">User ${user.id}</h5>
                                 </div>
+                                <div class="card-body">
+                                    <c:if test=" ${user.avartar} != null">
+                                        <img src="..." class="card-img-top" alt="...">
+                                    </c:if>
+                                    <img src="" alt="ảnh trống" style="display: none;">
 
-                                <div class="form-group mb-3">
-                                    <label for="exampleInputPassword1">Password: </label>
-                                    <form:input path="password" type="password" class="form-control"
-                                        id="exampleInputPassword1" placeholder="Password" />
+                                    <p class="card-text">Email: ${user.email} </p>
+
                                 </div>
-
-                                <button type="submit" class="btn btn-primary">
-                                    Submit
-                                </button>
-
-                            </form:form>
+                            </div>
+                            <a href="/admin/user" class="btn btn-warning mt-3"> Back </a>
                         </div>
                     </div>
                 </div>

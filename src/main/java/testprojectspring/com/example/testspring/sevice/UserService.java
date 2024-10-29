@@ -8,10 +8,10 @@ import testprojectspring.com.example.testspring.repository.UserRepository;
 
 @Service
 public class UserService {
-    private final UserRepository userRoRepository;
+    private final UserRepository useRepository;
 
     public UserService(UserRepository userRepository) {
-        this.userRoRepository = userRepository;
+        this.useRepository = userRepository;
     }
 
     public String handleHello() {
@@ -19,15 +19,23 @@ public class UserService {
     }
 
     public List<User> handleGetAllUsers() {
-        return this.userRoRepository.findAll();
+        return this.useRepository.findAll();
     }
 
     public User handelGetAllUserByEmail(String email) {
-        return this.userRoRepository.findTop1ByEmail(email);
+        return this.useRepository.findTop1ByEmail(email);
     }
 
     public User handelSaveUser(User newUser) {
-        return this.userRoRepository.save(newUser);
+        return this.useRepository.save(newUser);
+    }
+
+    public User handelUserByID(long id) {
+        return this.useRepository.findById(id).get();
+    }
+
+    public void handelDeleteById(long id) {
+        this.useRepository.deleteById(id);
     }
 
 }
