@@ -16,8 +16,13 @@
 
                 <link href="/css/styles.css" rel="stylesheet" />
 
+                <!-- font awesome  -->
                 <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"
                     crossorigin="anonymous"></script>
+
+                <!-- jquery  -->
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
             </head>
 
             <body class="sb-nav-fixed">

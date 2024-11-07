@@ -1,8 +1,18 @@
 <%@ page pageEncoding="UTF-8" %>
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
         <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
-
             <jsp:include page="../frame/head_frame.jsp" />
+
+            <script>
+                $(document).ready(() => {
+                    const avatarFile = $("#avatarFile");
+                    avatarFile.change(function (e) {
+                        const imgURL = URL.createObjectURL(e.target.files[0]);
+                        $("#avatarPreview").attr("src", imgURL);
+                        $("#avatarPreview").css({ "display": "block" });
+                    });
+                });
+            </script>
 
             <!-- Header  -->
             <jsp:include page="../layout/header.jsp" />
@@ -44,10 +54,10 @@
                                             </div>
                                             <div class="form-group mb-3 row ">
                                                 <div class="col-8">
-                                                    <label for="formFile" class="form-label">
+                                                    <label for="avatarFile" class="form-label">
                                                         Avatar:
                                                     </label>
-                                                    <input class="form-control" type="file" id="formFile">
+                                                    <input class="form-control" type="file" id="avatarFile">
                                                 </div>
                                                 <div class="col-4">
                                                     <label for="formFile" class="form-label">
@@ -58,6 +68,11 @@
                                                         <option value="3">ADMIN</option>
                                                     </select>
                                                 </div>
+                                            </div>
+
+                                            <div class="form-group mb-3">
+                                                <img style="max-height: 250px; display: none;" alt="avatar preview"
+                                                    id="avatarPreview" />
                                             </div>
 
                                             <button type="submit" class="btn btn-primary">
