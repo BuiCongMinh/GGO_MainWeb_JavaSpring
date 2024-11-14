@@ -13,13 +13,21 @@
                             <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                             User
                         </a>
-                        <a class="nav-link" href="/admin/broad_news">
+                        <a class="nav-link" href="/admin/projects">
                             <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                            Bảng Tin
+                            Dự án
                         </a>
-                        <a class="nav-link" href="/admin/category">
+                        <a class="nav-link" href="/admin/partners">
                             <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                            Danh Mục
+                            Đối tác
+                        </a>
+                        <a class="nav-link" href="/admin/products">
+                            <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                            Sản Phẩm
+                        </a>
+                        <a class="nav-link" href="/admin/services">
+                            <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                            Dịch Vụ
                         </a>
 
                     </div>

@@ -58,10 +58,18 @@ public class User {
         this.avartar = avartar;
     }
 
+    public Role getRole() {
+        return role;
+    }
+
+    public void setRole(Role role) {
+        this.role = role;
+    }
+
     @Override
     public String toString() {
-        return "User [id=" + id + ", email=" + email + ", password=" + password
-                + ", avartar=" + avartar + "]";
+        return "User [id=" + id + ", email=" + email + ", password=" + password + ", avartar=" + avartar + ", role="
+                + role + "]";
     }
 
 }

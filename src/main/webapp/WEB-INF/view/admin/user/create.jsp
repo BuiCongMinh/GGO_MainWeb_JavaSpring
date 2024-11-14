@@ -40,7 +40,9 @@
                                     <div class="col-md-6 col-12 mx-auto">
                                         <h1>Create User</h1>
                                         <hr>
-                                        <form:form method="post" action="/admin/user/create" modelAttribute="newUser">
+                                        <form:form method="post" action="/admin/user/create" modelAttribute="newUser"
+                                            enctype="multipart/form-data">
+
                                             <div class="form-group mb-3 ">
                                                 <label for="exampleInputEmail1">Email address: </label>
                                                 <form:input path="email" type="email" class="form-control"
@@ -57,16 +59,16 @@
                                                     <label for="avatarFile" class="form-label">
                                                         Avatar:
                                                     </label>
-                                                    <input class="form-control" type="file" id="avatarFile">
+                                                    <input class="form-control" type="file" id="avatarFile"
+                                                        name="MVN" />
                                                 </div>
                                                 <div class="col-4">
-                                                    <label for="formFile" class="form-label">
-                                                        Role:
-                                                    </label>
-                                                    <select class="form-select" aria-label="Default select example">
-                                                        <option value="1">USER</option>
-                                                        <option value="3">ADMIN</option>
-                                                    </select>
+                                                    <label for="formFile" class="form-label"> Role: </label>
+                                                    <form:select class="form-select" aria-label="Default select example"
+                                                        path="role.name">
+                                                        <form:option value="USER">USER</form:option>
+                                                        <form:option value="ADMIN">ADMIN</form:option>
+                                                    </form:select>
                                                 </div>
                                             </div>
 

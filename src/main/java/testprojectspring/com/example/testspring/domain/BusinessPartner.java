@@ -8,33 +8,25 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
 import jakarta.persistence.PrePersist;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
 
 @Entity
-@Table(name = "broad_news")
-public class BroadNews {
+@Table(name = "business_partner")
+public class BusinessPartner {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    private String title;
-    private String author;
-    private String content;
+
+    private String name_partner;
+    private String image;
 
     @Temporal(TemporalType.TIMESTAMP)
     @DateTimeFormat(pattern = "dd/MM/yyyy HH:mm:ss") // Định dạng cho dữ liệu đầu vào
     private Date date;
-
-    @ManyToOne
-    @JoinColumn(name = "category_id")
-    private CategoryType categoryType;
-
-    // category
 
     @PrePersist
     protected void onCreate() {
@@ -49,28 +41,20 @@ public class BroadNews {
         this.id = id;
     }
 
-    public String getTitle() {
-        return title;
+    public String getName_partner() {
+        return name_partner;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setName_partner(String name_partner) {
+        this.name_partner = name_partner;
     }
 
-    public String getAuthor() {
-        return author;
+    public String getImage() {
+        return image;
     }
 
-    public void setAuthor(String author) {
-        this.author = author;
-    }
-
-    public String getContent() {
-        return content;
-    }
-
-    public void setContent(String content) {
-        this.content = content;
+    public void setImage(String image) {
+        this.image = image;
     }
 
     public Date getDate() {
@@ -83,8 +67,8 @@ public class BroadNews {
 
     @Override
     public String toString() {
-        return "BroadNews [id=" + id + ", title=" + title + ", author=" + author + ", content=" + content + ", date="
-                + date + "]";
+        return "BusinessPartner [id=" + id + ", name_partner=" + name_partner + ", image=" + image + ", date=" + date
+                + "]";
     }
 
 }

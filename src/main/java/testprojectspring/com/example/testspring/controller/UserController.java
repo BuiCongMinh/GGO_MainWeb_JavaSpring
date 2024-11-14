@@ -8,20 +8,27 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 import testprojectspring.com.example.testspring.domain.User;
 import testprojectspring.com.example.testspring.repository.UserRepository;
+import testprojectspring.com.example.testspring.sevice.UploadService;
 import testprojectspring.com.example.testspring.sevice.UserService;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
+
 import java.util.List;
 
 @Controller
 public class UserController {
 
     private final UserService userSevice;
+    private final UploadService uploadService;
 
     public UserController(
             UserService userSevice,
-            UserRepository userRepository) {
+            UserRepository userRepository,
+            UploadService uploadService) {
 
         this.userSevice = userSevice;
+        this.uploadService = uploadService;
 
     }
 
@@ -90,10 +97,12 @@ public class UserController {
     @PostMapping("/admin/user/create")
     public String postCreateUser(
             Model model,
-            @ModelAttribute("newUser") User mvn) {
+            @ModelAttribute("newUser") User mvn,
+            @RequestParam("MVN") MultipartFile file) {
 
-        this.userSevice.handelSaveUser(mvn);
+        this.uploadService.handleSaveUploadFile(file, "avatar");
 
+        // this.userSevice.handelSaveUser(mvn);
         return "redirect:/admin/user";
     }
 

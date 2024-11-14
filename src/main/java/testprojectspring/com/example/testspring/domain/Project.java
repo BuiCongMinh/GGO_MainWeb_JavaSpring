@@ -1,7 +1,6 @@
 package testprojectspring.com.example.testspring.domain;
 
 import java.util.Date;
-import java.util.List;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -9,27 +8,24 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
 import jakarta.persistence.PrePersist;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
 
 @Entity
-@Table(name = "category_type")
-public class CategoryType {
-
+@Table(name = "project")
+public class Project {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    private String name_category;
+
+    private String name_project;
+    private String image;
 
     @Temporal(TemporalType.TIMESTAMP)
-    @DateTimeFormat(pattern = "dd/MM/yyyy HH:mm:ss") // Định dạng cho dữ liệu đầu vào
+    @DateTimeFormat(pattern = "dd/MM/yyyy HH:mm:ss")
     private Date date;
-
-    @OneToMany(mappedBy = "categoryType")
-    private List<BroadNews> broadNews;
 
     @PrePersist
     protected void onCreate() {
@@ -44,12 +40,20 @@ public class CategoryType {
         this.id = id;
     }
 
-    public String getName_category() {
-        return name_category;
+    public String getName_project() {
+        return name_project;
     }
 
-    public void setName_category(String name_category) {
-        this.name_category = name_category;
+    public void setName_project(String name_project) {
+        this.name_project = name_project;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 
     public Date getDate() {
@@ -62,7 +66,7 @@ public class CategoryType {
 
     @Override
     public String toString() {
-        return "CategoryType [id=" + id + ", name_category=" + name_category + ", date=" + date + "]";
+        return "Project [id=" + id + ", name_project=" + name_project + ", image=" + image + ", date=" + date + "]";
     }
 
 }

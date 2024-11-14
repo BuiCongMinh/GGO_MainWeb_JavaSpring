@@ -16,14 +16,14 @@
                 <div id="layoutSidenav_content">
                     <main>
                         <div class="container-fluid px-4">
-                            <h1 class="mt-4">Danh Mục</h1>
+                            <h1 class="mt-4">Partners</h1>
                             <ol class="breadcrumb mb-4 d-flex gap-1">
                                 <a class="breadcrumb-item active text-decoration-none" href="/admin">Dashboard</a>
                                 <li>/</li>
-                                <a class="breadcrumb-item text-decoration-none" href="">Danh Mục</a>
+                                <a class="breadcrumb-item text-decoration-none" href="">Partners</a>
                             </ol>
 
-                            this is category pages !
+                            this is Partners pages !
 
                         </div>
                     </main>
