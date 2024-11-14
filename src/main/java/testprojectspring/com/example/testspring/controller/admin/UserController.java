@@ -1,5 +1,6 @@
-package testprojectspring.com.example.testspring.controller;
+package testprojectspring.com.example.testspring.controller.admin;
 
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,29 +22,21 @@ public class UserController {
 
     private final UserService userSevice;
     private final UploadService uploadService;
+    private final PasswordEncoder passwordEncoder;
 
     public UserController(
             UserService userSevice,
             UserRepository userRepository,
-            UploadService uploadService) {
+            UploadService uploadService,
+            PasswordEncoder passwordEncoder) {
 
+        this.passwordEncoder = passwordEncoder;
         this.userSevice = userSevice;
         this.uploadService = uploadService;
 
     }
 
     // ========== GET ===========
-    @GetMapping("/")
-    public String getNewPage(Model model) {
-        User allUsers = this.userSevice.handelGetAllUserByEmail("2@gmail.com");
-
-        String newString = this.userSevice.handleHello();
-        model.addAttribute("newString", newString);
-        model.addAttribute("mvn", "hỏi mvn");
-
-        return "helloFromJSP";
-    }
-
     @GetMapping("/admin/user/create")
     public String getCreateUserPage(
             @ModelAttribute("newUser") User newUser) {
@@ -100,9 +93,15 @@ public class UserController {
             @ModelAttribute("newUser") User mvn,
             @RequestParam("MVN") MultipartFile file) {
 
-        this.uploadService.handleSaveUploadFile(file, "avatar");
+        String avatar = this.uploadService.handleSaveUploadFile(file, "admin/avatar");
+        String hashPassword = this.passwordEncoder.encode(mvn.getPassword());
 
-        // this.userSevice.handelSaveUser(mvn);
+        mvn.setAvartar(avatar);
+        mvn.setPassword(hashPassword);
+        mvn.setRole(this.userSevice.getRoleByName(mvn.getRole().getName()));
+
+        // save
+        this.userSevice.handelSaveUser(mvn);
         return "redirect:/admin/user";
     }
 
@@ -116,12 +115,14 @@ public class UserController {
 
     // update user
     @PostMapping("/admin/user/update")
-    public String postUpdateUser(@ModelAttribute("user") User currentUser) {
-        // TODO: process POST request
+    public String postUpdateUser(
+            @ModelAttribute("user") User currentUser
+
+    ) {
+
         User user = this.userSevice.handelUserByID(currentUser.getId());
 
         if (user != null) {
-            System.out.println(">>> run heare !");
             user.setEmail(currentUser.getEmail());
             user.setAvartar(currentUser.getAvartar());
 

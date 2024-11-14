@@ -39,6 +39,7 @@
                                                 <tr>
                                                     <th scope="col">ID</th>
                                                     <th scope="col">Email</th>
+                                                    <th scope="col">Role</th>
                                                     <th scope="col">Action</th>
                                                 </tr>
                                             </thead>
@@ -49,6 +50,7 @@
                                                     <tr>
                                                         <th scope="row" class="col-2">${user.id}</th>
                                                         <td class="col-md-4 ">${user.email}</td>
+                                                        <td class="col-md-4 ">${user.role.name}</td>
                                                         <td class="d-flex gap-3">
                                                             <a href="/admin/user/${user.id}"
                                                                 class="btn btn-success d-flex align-items-">View</a>
