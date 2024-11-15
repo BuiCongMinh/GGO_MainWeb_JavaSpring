@@ -17,11 +17,11 @@
 
 
             <!-- owl-carousel  -->
-            <!-- <link rel="stylesheet" href='owl.carousel.min.css' />
-            <link rel="stylesheet" href='owl.theme.default.min.css' /> -->
+            <link rel="stylesheet" href='css/client/owl.carousel.min.css' />
+            <link rel="stylesheet" href='css/client/owl.theme.default.min.css' />
 
             <!-- link css  -->
-            <link rel="stylesheet" href="/css/client/homepage.css" />
+            <link rel="stylesheet" href="css/client/homepage.css" />
 
             <!-- icon  -->
             <!-- <link rel="icon" href="img/cropped-favicon-32x32.png" sizes="32x32" />
@@ -115,11 +115,11 @@
                     <div class="partner">
                         <div class="scroll_partner">
                             <div class="logos_slide">
-                                <img src="'/images/client/homepage/landing-showcase-01-2.jpg'" alt="" />
-                                <img src="'/images/client/homepage/landing-showcase-2-1.jpg'" alt="" />
-                                <img src="'/images/client/homepage/landing-showcase-3-2.jpg'" alt="" />
-                                <img src="'/images/client/homepage/landing-showcase-4-1.jpg'" alt="" />
-                                <img src="'/images/client/homepage/landing-showcase-5-1.jpg'" alt="" />
+                                <img src="/images/client/homepage/landing-showcase-01-2.jpg" alt="" />
+                                <img src="/images/client/homepage/landing-showcase-2-1.jpg" alt="" />
+                                <img src="/images/client/homepage/landing-showcase-3-2.jpg" alt="" />
+                                <img src="/images/client/homepage/landing-showcase-4-1.jpg" alt="" />
+                                <img src="/images/client/homepage/landing-showcase-5-1.jpg" alt="" />
                             </div>
                         </div>
 
@@ -129,9 +129,9 @@
                                 <img src='/images/client/homepage/sector2/logo-1.jpg' alt="" />
                             </div>
                             <div class="contact_item">
-                                <img src=="'/images/client/homepage/sector2/logo-2.jpg' alt="" />
-                </div>
-                <div class=" contact_item">
+                                <img src='/images/client/homepage/sector2/logo-2.jpg' alt="" />
+                            </div>
+                            <div class=" contact_item">
                                 <img src='/images/client/homepage/sector2/logo-3.jpg' alt="" />
                             </div>
                             <div class="contact_item">
@@ -162,16 +162,17 @@
                     </div>
                 </div>
 
-                <div class="sector_3">
+                <div class="sector_3"
+                    style="background: url('/images/client/homepage/sector3/landing-showcase-01-2.jpg');">
                     <div class="title">
                         <h2 style="text-transform: uppercase">dịch vụ</h2>
                     </div>
                     <div class="service_list">
-                        <img src="'/images/client/homepage/sector3/anh1.jpg'" alt="" />
-                        <img src="'/images/client/homepage/sector3/anh2.jpg'" alt="" />
-                        <img src="'/images/client/homepage/sector3/anh3.jpg'" alt="" />
-                        <img src="'/images/client/homepage/sector3/anh4.jpg'" alt="" />
-                        <img src="'/images/client/homepage/sector3/anh5.jpg'" alt="" />
+                        <img src="/images/client/homepage/sector3/anh1.jpg" alt="" />
+                        <img src="/images/client/homepage/sector3/anh2.jpg" alt="" />
+                        <img src="/images/client/homepage/sector3/anh3.jpg" alt="" />
+                        <img src="/images/client/homepage/sector3/anh4.jpg" alt="" />
+                        <img src="/images/client/homepage/sector3/anh5.jpg" alt="" />
                     </div>
                 </div>
 
@@ -262,8 +263,11 @@
             </div>
         </body>
 
-        <script src='jquery.min.js'></script>
-        <script src='owl.carousel.min.js'></script>
-        <script src='/js'></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+            integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+        <script src='js/client/owl.carousel.min.js'></script>
+        <script src='js/client/homepage.js'></script>
 
         </html>
