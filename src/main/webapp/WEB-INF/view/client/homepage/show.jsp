@@ -15,7 +15,6 @@
                 integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
                 crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-
             <!-- owl-carousel  -->
             <link rel="stylesheet" href='css/client/owl.carousel.min.css' />
             <link rel="stylesheet" href='css/client/owl.theme.default.min.css' />
@@ -24,9 +23,9 @@
             <link rel="stylesheet" href="css/client/homepage.css" />
 
             <!-- icon  -->
-            <!-- <link rel="icon" href="img/cropped-favicon-32x32.png" sizes="32x32" />
-            <link rel="icon" href="img/cropped-favicon-192x192.png" sizes="192x192" />
-            <link rel="apple-touch-icon" href="img/cropped-favicon-180x180.png" /> -->
+            <link rel="icon" href="images/client/homepage/cropped-favicon-32x32.png" sizes="32x32" />
+            <link rel="icon" href="images/client/homepage/cropped-favicon-192x192.png" sizes="192x192" />
+            <link rel="apple-touch-icon" href="images/client/homepage/cropped-favicon-180x180.png" />
         </head>
 
         <body>
@@ -51,7 +50,9 @@
                     <div class="title">
                         <h2>DỰ ÁN</h2>
                     </div>
-                    <div class="top">
+
+                    <div class="projects">
+
                         <div class="item">
                             <div class="img_item">
                                 <a href="https://mhgh.ggo.vn/">
@@ -82,9 +83,6 @@
                                 <p>IDLE HEROES: KỶ NGUYÊN ANH HÙNG</p>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="bottom">
                         <div class="item">
                             <div class="img_item">
                                 <a>
@@ -105,7 +103,9 @@
                                 <p>MỘNG HUYỄN VÕ LÂM</p>
                             </div>
                         </div>
+
                     </div>
+
                 </div>
 
                 <div class="sector_2">
@@ -131,7 +131,7 @@
                             <div class="contact_item">
                                 <img src='/images/client/homepage/sector2/logo-2.jpg' alt="" />
                             </div>
-                            <div class=" contact_item">
+                            <div class="contact_item">
                                 <img src='/images/client/homepage/sector2/logo-3.jpg' alt="" />
                             </div>
                             <div class="contact_item">

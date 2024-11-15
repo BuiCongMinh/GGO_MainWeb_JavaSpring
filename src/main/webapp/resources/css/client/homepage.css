@@ -1,3 +1,6 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat+Subrayada&family=Montserrat:ital,wght@0,700;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
 * {
     margin: 0;
     padding: 0;
@@ -117,40 +120,42 @@
     margin-bottom: 50px;
 }
 
-.sector_1 .top {
+.sector_1 .projects {
     display: flex;
-    justify-content: space-between;
-    margin-bottom: 120px;
+    flex-wrap: wrap;
+    align-content: space-between;
+    gap: 2vw;
 }
 
-.sector_1 .top .item {
+.sector_1 .projects .item {
     display: flex;
     flex-direction: column;
     width: 31.333%;
     cursor: pointer;
+    margin-bottom: 4vw;
 }
 
-.sector_1 .top .item .img_item {
+.sector_1 .projects .item .img_item {
     width: 100%;
     margin-bottom: 3px;
 }
 
-.sector_1 .top .item .img_item a img {
+.sector_1 .projects .item .img_item a img {
     max-width: 100%;
     object-fit: cover;
 }
 
-.sector_1 .top .item .title_item {
+.sector_1 .projects .item .title_item {
     position: relative;
 }
 
-.sector_1 .top .item .title_item p {
+.sector_1 .projects .item .title_item p {
     text-align: left;
     position: absolute;
     left: 0;
 }
 
-.sector_1 .top .item .title_item p::after {
+.sector_1 .projects .item .title_item p::after {
     content: "";
     position: absolute;
     height: 1px;
@@ -163,7 +168,7 @@
     transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
-.sector_1 .top .item .title_item p:hover::after {
+.sector_1 .projects .item .title_item p:hover::after {
     transform: scaleX(1);
 }
 
@@ -178,65 +183,6 @@
     transition: filter 1s ease;
 }
 
-.sector_1 .bottom {
-    display: flex;
-    gap: 2.5vw;
-}
-
-.sector_1 .bottom .item {
-    display: flex;
-    flex-direction: column;
-    width: 31.333%;
-    cursor: pointer;
-}
-
-.sector_1 .bottom .item .img_item {
-    width: 100%;
-    margin-bottom: 3px;
-}
-
-.sector_1 .bottom .item .img_item a img {
-    max-width: 100%;
-    object-fit: cover;
-}
-
-.sector_1 .bottom .item .title_item {
-    position: relative;
-}
-
-.sector_1 .bottom .item .title_item p {
-    display: flex;
-    position: absolute;
-    left: 0;
-}
-
-.sector_1 .bottom .item .title_item p::after {
-    content: "";
-    position: absolute;
-    height: 1px;
-    width: 100%;
-    transform: scaleX(0);
-    transform-origin: left;
-    background-color: white;
-    bottom: 0;
-    left: 0;
-    transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
-}
-
-.sector_1 .bottom .item .title_item p:hover::after {
-    transform: scaleX(1);
-}
-
-.item:hover .overlay {
-    opacity: 1;
-    /* Hiển thị overlay khi hover vào */
-}
-
-.item:hover .img_item img {
-    filter: brightness(190%) sepia(20%);
-    /* Điều chỉnh độ sáng và thêm màu ánh sáng đỏ */
-    transition: filter 1s ease;
-}
 
 /* sector_2*/
 .App_body .sector_2 {
@@ -674,12 +620,11 @@
         background: black;
         color: white;
         padding: 9% 6% 9% 6%;
-        /* background: url("./images/client/homepage/sector3/landing-showcase-01-2.jpg"); */
         background: url("../../images/client/homepage/sector3/landing-showcase-01-2.jpg");
         background-size: cover;
     }
 
-    .sector_1 .top {
+    .sector_1 .projects {
         display: flex;
         justify-content: center;
         margin-bottom: 5vh;
@@ -688,21 +633,7 @@
         gap: 5vh;
     }
 
-    .sector_1 .top .item {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        cursor: pointer;
-    }
-
-    .sector_1 .bottom {
-        display: flex;
-        gap: 5vh;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .sector_1 .bottom .item {
+    .sector_1 .projects .item {
         display: flex;
         flex-direction: column;
         width: 100%;
