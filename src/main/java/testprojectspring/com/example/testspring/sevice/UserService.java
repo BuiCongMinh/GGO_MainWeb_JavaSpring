@@ -49,4 +49,8 @@ public class UserService {
         return this.roleRepository.findByName(name);
     }
 
+    public long getCountAllUser() {
+        return this.useRepository.count();
+    }
+
 }

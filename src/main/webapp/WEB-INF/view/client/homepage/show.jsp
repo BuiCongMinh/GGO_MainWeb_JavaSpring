@@ -30,6 +30,7 @@
 
         <body>
             <div class="App_body" id="App_body">
+
                 <div class="header">
                     <div class="logo">
                         <img src='/images/client/homepage/headers/logo-ggo.png' alt="" />
@@ -63,6 +64,7 @@
                                 <p>MỘNG HUYỀN GIANG HỒ</p>
                             </div>
                         </div>
+
                         <div class="item">
                             <div class="img_item">
                                 <a href="https://nhatmong.ggo.vn/">
@@ -73,6 +75,7 @@
                                 <p>NHẤT MỘNG VÕ LÂM</p>
                             </div>
                         </div>
+
                         <div class="item">
                             <div class="img_item">
                                 <a href="http://knah.mobi/">
@@ -83,6 +86,7 @@
                                 <p>IDLE HEROES: KỶ NGUYÊN ANH HÙNG</p>
                             </div>
                         </div>
+
                         <div class="item">
                             <div class="img_item">
                                 <a>
@@ -93,6 +97,7 @@
                                 <p>MỘNG TU TIÊN AFK</p>
                             </div>
                         </div>
+
                         <div class="item">
                             <div class="img_item">
                                 <a>
@@ -125,6 +130,7 @@
 
                         <div class="section">
                             <div class="border"></div>
+
                             <div class="contact_item">
                                 <img src='/images/client/homepage/sector2/logo-1.jpg' alt="" />
                             </div>
@@ -143,6 +149,7 @@
                             <div class="contact_item">
                                 <img src='/images/client/homepage/sector2/logo-6.jpg' alt="" />
                             </div>
+
                         </div>
                     </div>
                 </div>
@@ -260,7 +267,9 @@
                 </div>
 
                 <div class="license">Bản quyền nội dung thuộc về GGO JSC.</div>
+
             </div>
+
         </body>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
