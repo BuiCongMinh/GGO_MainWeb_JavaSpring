@@ -12,6 +12,8 @@ import jakarta.persistence.PrePersist;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
 
 @Entity
 @Table(name = "business_partner")
@@ -21,7 +23,11 @@ public class BusinessPartner {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
+    @NotNull(message = "Tên đối tác không được để trống !")
+    @Size(min = 3, message = "Tên đối tác của phải lớn hơn 3 ký tự")
     private String name_partner;
+
+    @NotNull(message = "Ảnh không được để trống !")
     private String image;
 
     @Temporal(TemporalType.TIMESTAMP)

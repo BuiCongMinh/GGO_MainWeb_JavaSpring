@@ -7,6 +7,9 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
 
 @Entity
 @Table(name = "users")
@@ -16,10 +19,14 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
+    @NotNull(message = "Email không được để trống !")
+    @Email(message = "Email không hợp lệ")
     private String email;
 
+    @Size(min = 6, message = "Password phải có ít nhất 6 ký tự")
     private String password;
 
+    @NotNull(message = "Avartar ko được để trống")
     private String avartar;
 
     @ManyToOne

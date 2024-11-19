@@ -16,6 +16,7 @@
                 <div id="layoutSidenav_content">
                     <main>
                         <div class="container-fluid px-4">
+
                             <h1 class="mt-4">Products</h1>
                             <ol class="breadcrumb mb-4 d-flex gap-1">
                                 <a class="breadcrumb-item active text-decoration-none" href="/admin">Dashboard</a>
@@ -27,8 +28,10 @@
 
                         </div>
                     </main>
+
                     <!-- footer  -->
                     <jsp:include page="../layout/footer.jsp" />
+
                 </div>
             </div>
 

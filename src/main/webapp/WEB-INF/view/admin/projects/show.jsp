@@ -23,9 +23,52 @@
                                 <a class="breadcrumb-item text-decoration-none" href="">Projects</a>
                             </ol>
 
-                            this is Projects pages !
+                            <div class=" container">
+                                <div class="row">
+                                    <div class="col-12 mx-auto">
+                                        <div class="d-flex justify-content-between">
+                                            <h3>Table projects</h3>
+                                            <a href="/admin/projects/create" class="btn btn-primary">
+                                                Create a project
+                                            </a>
+                                        </div>
+                                        <hr />
+                                        <table class=" table table-bordered table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <th>ID</th>
+                                                    <th>Name</th>
+                                                    <th>Date</th>
+                                                    <th>Image</th>
+                                                    <th>Action</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
 
-                        </div>
+                                                <!-- <c:forEach var="user" items="${users1}">
+                                                    <tr>
+                                                        <th>${user.id}</th>
+                                                        <td>${user.email}</td>
+                                                        <td>${user.fullName}</td>
+                                                        <td>${user.role.name}</td>
+                                                        <td>
+                                                            <a href="/admin/user/${user.id}"
+                                                                class="btn btn-success">View</a>
+                                                            <a href="/admin/user/update/${user.id}"
+                                                                class="btn btn-warning  mx-2">Update</a>
+                                                            <a href="/admin/user/delete/${user.id}"
+                                                                class="btn btn-danger">Delete</a>
+                                                        </td>
+                                                    </tr>
+                                                </c:forEach> -->
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+
+
+                            </div>
                     </main>
                     <!-- footer  -->
                     <jsp:include page="../layout/footer.jsp" />

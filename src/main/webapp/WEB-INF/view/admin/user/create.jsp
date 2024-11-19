@@ -3,17 +3,6 @@
         <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
             <jsp:include page="../frame/head_frame.jsp" />
 
-            <script>
-                $(document).ready(() => {
-                    const avatarFile = $("#avatarFile");
-                    avatarFile.change(function (e) {
-                        const imgURL = URL.createObjectURL(e.target.files[0]);
-                        $("#avatarPreview").attr("src", imgURL);
-                        $("#avatarPreview").css({ "display": "block" });
-                    });
-                });
-            </script>
-
             <!-- Header  -->
             <jsp:include page="../layout/header.jsp" />
             <!-- end  -->

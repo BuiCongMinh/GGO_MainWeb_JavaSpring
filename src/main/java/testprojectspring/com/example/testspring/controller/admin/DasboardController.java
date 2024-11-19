@@ -22,6 +22,7 @@ public class DasboardController {
     public DasboardController(
             UserService userService,
             ProductService productService,
+
             PartnerRepository partnerRepository,
             ProjectRepository projectRepository,
             ServiceRepository serviceRepository
@@ -30,6 +31,7 @@ public class DasboardController {
 
         this.userService = userService;
         this.productService = productService;
+
         this.partnerRepository = partnerRepository;
         this.projectRepository = projectRepository;
         this.serviceRepository = serviceRepository;
