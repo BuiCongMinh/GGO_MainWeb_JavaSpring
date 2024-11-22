@@ -33,7 +33,7 @@
                                             </div>
                                             <form:form action="/admin/user/delete" method="post" modelAttribute="user">
                                                 <div class="card-body">
-                                                    <c:if test=" ${user.avartar} != null">
+                                                    <c:if test=" ${user.avatar} != null">
                                                         <img src="..." class="card-img-top" alt="...">
                                                     </c:if>
                                                     <form:input path="id" value="${user.id}" style="display: none;" />

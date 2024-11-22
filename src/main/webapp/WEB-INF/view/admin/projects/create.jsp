@@ -34,7 +34,7 @@
                                     <div class="col-md-6 col-12 mx-auto">
                                         <h1>Create Projects</h1>
                                         <hr>
-                                        <form:form method="post" action="/admin/user/create"
+                                        <form:form method="post" action="/admin/projects/create"
                                             enctype="multipart/form-data" modelAttribute="newProject">
 
                                             <div class="form-group mb-3 ">
@@ -49,8 +49,8 @@
                                                     <label for="avatarFile" class="form-label">
                                                         Images:
                                                     </label>
-                                                    <form:input class="form-control" path="image" type="file"
-                                                        id="avatarFile" name="MVN" />
+                                                    <input class="form-control" path="image" type="file" id="avatarFile"
+                                                        name="imgProject" />
                                                 </div>
                                             </div>
 

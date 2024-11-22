@@ -19,15 +19,14 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
+    @Email(message = "Email không hợp lệ", regexp = "^[a-zA-Z0-9_!#$%&'*+/=?`{|}~^.-]+@[a-zA-Z0-9.-]+$")
     @NotNull(message = "Email không được để trống !")
-    @Email(message = "Email không hợp lệ")
     private String email;
 
     @Size(min = 6, message = "Password phải có ít nhất 6 ký tự")
     private String password;
 
-    @NotNull(message = "Avartar ko được để trống")
-    private String avartar;
+    private String avatar;
 
     @ManyToOne
     @JoinColumn(name = "role_id")
@@ -57,12 +56,12 @@ public class User {
         this.password = password;
     }
 
-    public String getAvartar() {
-        return avartar;
+    public String getAvatar() {
+        return avatar;
     }
 
-    public void setAvartar(String avartar) {
-        this.avartar = avartar;
+    public void setAvatar(String avatar) {
+        this.avatar = avatar;
     }
 
     public Role getRole() {
@@ -75,7 +74,7 @@ public class User {
 
     @Override
     public String toString() {
-        return "User [id=" + id + ", email=" + email + ", password=" + password + ", avartar=" + avartar + ", role="
+        return "User [id=" + id + ", email=" + email + ", password=" + password + ", avatar=" + avatar + ", role="
                 + role + "]";
     }
 

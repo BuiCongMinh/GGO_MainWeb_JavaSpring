@@ -32,25 +32,48 @@
                                         <form:form method="post" action="/admin/user/create" modelAttribute="newUser"
                                             enctype="multipart/form-data">
 
+                                            <!-- c:set  -->
+                                            <c:set var="emailHasBindError">
+                                                <form:errors path="email" class="invalid-feedback" />
+                                            </c:set>
+                                            <c:set var="passwordHasBindError">
+                                                <form:errors path="password" class="invalid-feedback" />
+                                            </c:set>
+                                            <c:set var="avatarHasBindError">
+                                                <form:errors path="avatar" cssClass="invalid-feedback" />
+                                            </c:set>
+                                            <!-- end  -->
+
                                             <div class="form-group mb-3 ">
                                                 <label for="exampleInputEmail1">Email address: </label>
-                                                <form:input path="email" type="email" class="form-control"
+                                                <form:input path="email" type="email"
+                                                    class="form-control ${not empty emailHasBindError? 'is-invalid':''}"
                                                     id="exampleInputEmail1" aria-describedby="emailHelp"
                                                     placeholder="Enter email" />
+                                                ${emailHasBindError}
                                             </div>
+
                                             <div class="form-group mb-3">
                                                 <label for="exampleInputPassword1">Password: </label>
-                                                <form:input path="password" type="password" class="form-control"
+                                                <form:input path="password" type="password"
+                                                    class="form-control ${not empty passwordHasBindError? 'is-invalid':''} "
                                                     id="exampleInputPassword1" placeholder="Password" />
+                                                ${passwordHasBindError}
                                             </div>
+
                                             <div class="form-group mb-3 row ">
                                                 <div class="col-8">
                                                     <label for="avatarFile" class="form-label">
                                                         Avatar:
                                                     </label>
-                                                    <input class="form-control" type="file" id="avatarFile"
-                                                        name="MVN" />
+                                                    <input
+                                                        class="form-control ${not empty avatarHasBindError? 'is-invalid':''}"
+                                                        type="file" id="avatarFile" name="MVN" />
+
+                                                    ${avatarHasBindError}
+
                                                 </div>
+
                                                 <div class="col-4">
                                                     <label for="formFile" class="form-label"> Role: </label>
                                                     <form:select class="form-select" aria-label="Default select example"
@@ -59,6 +82,7 @@
                                                         <form:option value="ADMIN">ADMIN</form:option>
                                                     </form:select>
                                                 </div>
+
                                             </div>
 
                                             <div class="form-group mb-3">

@@ -33,7 +33,7 @@
                                                 <h2 class="card-title">User ${user.id}</h5>
                                             </div>
                                             <div class="card-body">
-                                                <c:if test=" ${user.avartar} != null">
+                                                <c:if test=" ${user.avatar} != null">
                                                     <img src="..." class="card-img-top" alt="...">
                                                 </c:if>
                                                 <img src="" alt="ảnh trống" style="display: none;">

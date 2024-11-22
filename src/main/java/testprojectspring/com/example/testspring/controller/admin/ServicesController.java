@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class ServicesController {
-    @GetMapping("/admin/services")
+    @GetMapping("/admin/service")
     public String getMethodName() {
         return "admin/services/show";
     }

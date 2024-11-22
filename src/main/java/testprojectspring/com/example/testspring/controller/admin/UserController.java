@@ -3,6 +3,8 @@ package testprojectspring.com.example.testspring.controller.admin;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -14,6 +16,8 @@ import testprojectspring.com.example.testspring.sevice.UserService;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
+
+import jakarta.validation.Valid;
 
 import java.util.List;
 
@@ -89,14 +93,29 @@ public class UserController {
     // =========== POST ============
     @PostMapping("/admin/user/create")
     public String postCreateUser(
-            Model model,
-            @ModelAttribute("newUser") User mvn,
+            @ModelAttribute("newUser") @Valid User mvn,
+            BindingResult newUserBindingResult,
             @RequestParam("MVN") MultipartFile file) {
+
+        // check input file empty
+        if (file.isEmpty()) {
+            newUserBindingResult.rejectValue("avatar", "error.newUser", "Avatar không được để trống !");
+        }
+
+        List<FieldError> errors = newUserBindingResult.getFieldErrors();
+
+        for (FieldError error : errors) {
+            System.out.println(">>>" + error.getField() + " - " + error.getDefaultMessage());
+        }
+
+        // validate
+        if (newUserBindingResult.hasErrors()) {
+            return "/admin/user/create";
+        }
 
         String avatar = this.uploadService.handleSaveUploadFile(file, "admin/avatar");
         String hashPassword = this.passwordEncoder.encode(mvn.getPassword());
-
-        mvn.setAvartar(avatar);
+        mvn.setAvatar(avatar);
         mvn.setPassword(hashPassword);
         mvn.setRole(this.userSevice.getRoleByName(mvn.getRole().getName()));
 
@@ -116,15 +135,12 @@ public class UserController {
     // update user
     @PostMapping("/admin/user/update")
     public String postUpdateUser(
-            @ModelAttribute("user") User currentUser
-
-    ) {
+            @ModelAttribute("user") User currentUser) {
 
         User user = this.userSevice.handelUserByID(currentUser.getId());
 
         if (user != null) {
             user.setEmail(currentUser.getEmail());
-            user.setAvartar(currentUser.getAvartar());
 
             this.userSevice.handelSaveUser(user);
         }

@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class PartnersController {
-    @GetMapping("/admin/partners")
+    @GetMapping("/admin/partner")
     public String getAdminAllPartnersPage() {
         return "/admin/partners/show";
     }
