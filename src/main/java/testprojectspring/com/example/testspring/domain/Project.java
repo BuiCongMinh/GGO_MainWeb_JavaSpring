@@ -26,7 +26,6 @@ public class Project {
     @Size(min = 3, message = "Tên project phải trên 3 ký tự ! ")
     private String name_project;
 
-    @NotNull(message = "Ảnh không được để trống !")
     private String image;
 
     @Temporal(TemporalType.TIMESTAMP)

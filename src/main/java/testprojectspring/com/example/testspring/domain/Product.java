@@ -27,7 +27,6 @@ public class Product {
     @Size(min = 3, message = "Tên phải có nhiều hơn 3 ký tự !")
     private String name_product;
 
-    @NotNull(message = "Ảnh không được để trống !")
     private String image;
 
     @Temporal(TemporalType.TIMESTAMP)

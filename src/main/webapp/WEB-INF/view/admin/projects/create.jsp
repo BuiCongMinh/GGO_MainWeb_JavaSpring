@@ -20,7 +20,7 @@
                                     Dashboard
                                 </a>
                                 <li>/</li>
-                                <a class="breadcrumb-item active text-decoration-none" href="/admin/projects">
+                                <a class="breadcrumb-item active text-decoration-none" href="/admin/project">
                                     Projects
                                 </a>
                                 <li>/</li>

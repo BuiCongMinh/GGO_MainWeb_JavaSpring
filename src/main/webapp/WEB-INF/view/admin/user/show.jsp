@@ -23,18 +23,18 @@
                                 <a class="breadcrumb-item text-decoration-none" href="">Users</a>
                             </ol>
 
-                            <div class="container mt-5">
+                            <div class="container">
                                 <div class="row">
                                     <div class="col-12 col-md-9 mx-auto">
                                         <div class="d-flex justify-content-between">
-                                            <h1>All Users</h1>
+                                            <h3>All Users</h3>
                                             <a href="/admin/user/create"
                                                 class="btn btn-primary d-flex align-items-center">
                                                 Create User
                                             </a>
                                         </div>
                                         <hr>
-                                        <table class="table">
+                                        <table class="table text-center">
                                             <thead>
                                                 <tr>
                                                     <th scope="col">ID</th>
@@ -53,11 +53,11 @@
                                                         <td class="col-md-4 ">${user.role.name}</td>
                                                         <td class="d-flex gap-3">
                                                             <a href="/admin/user/${user.id}"
-                                                                class="btn btn-success d-flex align-items-">View</a>
+                                                                class="btn btn-success d-flex align-items-center">View</a>
                                                             <a href="/admin/user/update/${user.id}"
-                                                                class="btn btn-warning d-flex align-items-">Update</a>
+                                                                class="btn btn-warning d-flex align-items-center">Update</a>
                                                             <a href="/admin/user/delete/${user.id}"
-                                                                class="btn btn-danger d-flex align-items-">Delete</a>
+                                                                class="btn btn-danger d-flex align-items-center">Delete</a>
                                                         </td>
                                                     </tr>
                                                 </c:forEach>

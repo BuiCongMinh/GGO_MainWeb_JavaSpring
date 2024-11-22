@@ -27,7 +27,6 @@ public class BusinessPartner {
     @Size(min = 3, message = "Tên đối tác của phải lớn hơn 3 ký tự")
     private String name_partner;
 
-    @NotNull(message = "Ảnh không được để trống !")
     private String image;
 
     @Temporal(TemporalType.TIMESTAMP)

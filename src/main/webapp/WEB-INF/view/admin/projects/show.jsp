@@ -12,7 +12,6 @@
                 <jsp:include page="../layout/sidebar.jsp" />
                 <!-- end  -->
 
-
                 <div id="layoutSidenav_content">
                     <main>
                         <div class="container-fluid px-4">
@@ -25,42 +24,42 @@
 
                             <div class=" container">
                                 <div class="row">
-                                    <div class="col-12 mx-auto">
+                                    <div class="col-12 col-md-9 mx-auto">
                                         <div class="d-flex justify-content-between">
                                             <h3>Table projects</h3>
-                                            <a href="/admin/projects/create" class="btn btn-primary">
+                                            <a href="/admin/project/create" class="btn btn-primary">
                                                 Create a project
                                             </a>
                                         </div>
                                         <hr />
-                                        <table class=" table table-bordered table-hover">
+                                        <table class="table text-center">
                                             <thead>
                                                 <tr>
                                                     <th>ID</th>
                                                     <th>Name</th>
                                                     <th>Date</th>
-                                                    <th>Image</th>
                                                     <th>Action</th>
                                                 </tr>
                                             </thead>
-                                            <tbody>
 
-                                                <!-- <c:forEach var="user" items="${users1}">
+                                            <tbody>
+                                                <c:forEach var="project" items="${allProjects}">
                                                     <tr>
-                                                        <th>${user.id}</th>
-                                                        <td>${user.email}</td>
-                                                        <td>${user.fullName}</td>
-                                                        <td>${user.role.name}</td>
-                                                        <td>
-                                                            <a href="/admin/user/${user.id}"
+                                                        <th scope="row" class="col-2">${project.id}</th>
+                                                        <td class="col-md-4">${project.name_project}</td>
+                                                        <td class="col-md-4">
+                                                            ${project.date}
+                                                        </td>
+                                                        <td class="d-flex gap-3">
+                                                            <a href="/admin/project/${project.id}"
                                                                 class="btn btn-success">View</a>
-                                                            <a href="/admin/user/update/${user.id}"
-                                                                class="btn btn-warning  mx-2">Update</a>
-                                                            <a href="/admin/user/delete/${user.id}"
+                                                            <a href="/admin/project/update/${project.id}"
+                                                                class="btn btn-warning">Update</a>
+                                                            <a href="/admin/project/delete/${project.id}"
                                                                 class="btn btn-danger">Delete</a>
                                                         </td>
                                                     </tr>
-                                                </c:forEach> -->
+                                                </c:forEach>
 
                                             </tbody>
                                         </table>
