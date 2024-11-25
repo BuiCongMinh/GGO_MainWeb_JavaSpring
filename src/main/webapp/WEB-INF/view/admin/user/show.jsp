@@ -34,6 +34,7 @@
                                             </a>
                                         </div>
                                         <hr>
+
                                         <table class="table text-center">
                                             <thead>
                                                 <tr>
@@ -63,6 +64,7 @@
                                                 </c:forEach>
                                             </tbody>
                                         </table>
+
                                     </div>
                                 </div>
 
@@ -74,6 +76,5 @@
                     <jsp:include page="../layout/footer.jsp" />
                 </div>
             </div>
-
 
             <jsp:include page="../frame/foot_frame.jsp" />

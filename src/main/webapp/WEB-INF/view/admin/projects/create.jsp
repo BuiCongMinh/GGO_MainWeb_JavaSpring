@@ -34,14 +34,26 @@
                                     <div class="col-md-6 col-12 mx-auto">
                                         <h1>Create Projects</h1>
                                         <hr>
-                                        <form:form method="post" action="/admin/projects/create"
+                                        <form:form method="post" action="/admin/project/create"
                                             enctype="multipart/form-data" modelAttribute="newProject">
+
+                                            <!-- c:set -->
+                                            <c:set var="imageHasBindErrors">
+                                                <form:errors path="image" cssClass="invalid-feedback" />
+                                            </c:set>
+
+                                            <c:set var="nameProjectHasBindErrors">
+                                                <form:errors path="name_project" cssClass="invalid-feedback" />
+                                            </c:set>
+                                            <!-- end  -->
 
                                             <div class="form-group mb-3 ">
                                                 <label for="exampleInputEmail1">Name Project</label>
-                                                <form:input path="name_project" type="text" class="form-control"
-                                                    id="exampleInputEmail1" aria-describedby="emailHelp"
+                                                <form:input path="name_project" type="text"
+                                                    class="form-control ${not empty nameProjectHasBindErrors? 'is-invalid':''}"
                                                     placeholder="Enter name project" />
+
+                                                ${nameProjectHasBindErrors}
                                             </div>
 
                                             <div class="form-group mb-3 row ">
@@ -49,8 +61,10 @@
                                                     <label for="avatarFile" class="form-label">
                                                         Images:
                                                     </label>
-                                                    <input class="form-control" path="image" type="file" id="avatarFile"
-                                                        name="imgProject" />
+                                                    <input
+                                                        class="form-control ${not empty imageHasBindErrors? 'is-invalid':''}"
+                                                        type="file" id="avatarFile" name="imgProject" />
+                                                    ${imageHasBindErrors}
                                                 </div>
                                             </div>
 

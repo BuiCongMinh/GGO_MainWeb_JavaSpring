@@ -19,8 +19,16 @@ public class ProjectService {
         return this.projectRepository.save(newProject);
     }
 
+    public Project handelProjectByID(long id) {
+        return this.projectRepository.findById(id).get();
+    }
+
     public List<Project> handelGetAllProject() {
         return this.projectRepository.findAll();
+    }
+
+    public void handelDeleteProjectById(long id) {
+        this.projectRepository.deleteById(id);
     }
 
 }

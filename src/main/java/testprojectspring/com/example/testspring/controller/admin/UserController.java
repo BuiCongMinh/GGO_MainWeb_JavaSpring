@@ -102,20 +102,21 @@ public class UserController {
             newUserBindingResult.rejectValue("avatar", "error.newUser", "Avatar không được để trống !");
         }
 
+        // print to the terminal screen
         List<FieldError> errors = newUserBindingResult.getFieldErrors();
-
         for (FieldError error : errors) {
             System.out.println(">>>" + error.getField() + " - " + error.getDefaultMessage());
         }
 
         // validate
         if (newUserBindingResult.hasErrors()) {
-            return "/admin/user/create";
+            return "admin/user/create";
         }
 
         String avatar = this.uploadService.handleSaveUploadFile(file, "admin/avatar");
-        String hashPassword = this.passwordEncoder.encode(mvn.getPassword());
         mvn.setAvatar(avatar);
+
+        String hashPassword = this.passwordEncoder.encode(mvn.getPassword());
         mvn.setPassword(hashPassword);
         mvn.setRole(this.userSevice.getRoleByName(mvn.getRole().getName()));
 
@@ -144,6 +145,8 @@ public class UserController {
 
             this.userSevice.handelSaveUser(user);
         }
+
+        // còn thiếu chức năng thay đổi ảnh !
 
         return "redirect:/admin/user";
     }
