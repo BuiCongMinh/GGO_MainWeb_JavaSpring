@@ -15,13 +15,13 @@
                 <div id="layoutSidenav_content">
                     <main>
                         <div class="container-fluid px-4">
-                            <h1 class="mt-4">Delete Project</h1>
+                            <h1 class="mt-4">Delete Product</h1>
                             <ol class="breadcrumb mb-4 d-flex gap-1">
                                 <a class="breadcrumb-item active text-decoration-none" href="/admin">Dashboard</a>
                                 <li>/</li>
-                                <a class="breadcrumb-item text-decoration-none active" href="/admin/project">Project</a>
+                                <a class="breadcrumb-item text-decoration-none active" href="/admin/product">Product</a>
                                 <li>/</li>
-                                <a class="breadcrumb-item text-decoration-none " href="">Delete Project</a>
+                                <a class="breadcrumb-item text-decoration-none " href="">Delete Product</a>
                             </ol>
 
                             <div class="container mt-5">
@@ -30,26 +30,26 @@
                                         <div class="card" style="width:60%;">
                                             <div class="card-header">
                                                 <h2 class="card-title">
-                                                    Do you want delele project: ${project.name_project} ?
+                                                    Do you want delele product: ${product.name_product} ?
                                                 </h2>
                                             </div>
-                                            <form:form action="/admin/project/delete" method="post"
-                                                modelAttribute="project">
+                                            <form:form action="/admin/product/delete" method="post"
+                                                modelAttribute="product">
                                                 <div class="card-body">
-                                                    <c:if test=" ${project.image} != null">
+                                                    <c:if test=" ${product.image} != null">
                                                         <img src="..." class="card-img-top" alt="...">
                                                     </c:if>
-                                                    <form:input path="id" value="${project.id}"
+                                                    <form:input path="id" value="${product.id}"
                                                         style="display: none;" />
 
                                                     <div class="d-flex flex-column w-25">
                                                         <button class="btn btn-danger mt-3"> Confrim </button>
-                                                        <a href="/admin/project" class="btn btn-success mt-3"> Back To
-                                                            All Project </a>
+                                                        <a href="/admin/product" class="btn btn-success mt-3"> Back </a>
                                                     </div>
 
                                                 </div>
                                             </form:form>
+
                                         </div>
                                     </div>
                                 </div>
