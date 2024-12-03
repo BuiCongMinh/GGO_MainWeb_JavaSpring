@@ -84,7 +84,6 @@ public class ProductsController {
             BindingResult productBindingResult,
             @RequestParam("imgProduct") MultipartFile file) {
 
-        // TODO: process POST request
         if (file.isEmpty()) {
             productBindingResult.rejectValue("image", "error.newProduct", "Ảnh sản phẩm không được để trống");
         }
@@ -112,7 +111,6 @@ public class ProductsController {
         Product product = this.productService.handelGetProductByID(currentProduct.getId());
         if (product != null) {
             product.setName_product(currentProduct.getName_product());
-
             this.productService.handelSaveProduct(product);
         }
         // Thiếu chức năng set image

@@ -24,11 +24,11 @@ public class ProductService {
     }
 
     public long getCountAllProduct() {
-        return productRepository.count();
+        return this.productRepository.count();
     }
 
     public Product handelSaveProduct(Product product) {
-        return productRepository.save(product);
+        return this.productRepository.save(product);
     }
 
     public void handelDeleteProductByID(long id) {
