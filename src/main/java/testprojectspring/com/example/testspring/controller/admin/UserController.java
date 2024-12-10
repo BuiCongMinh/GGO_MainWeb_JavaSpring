@@ -30,7 +30,6 @@ public class UserController {
 
     public UserController(
             UserService userSevice,
-            UserRepository userRepository,
             UploadService uploadService,
             PasswordEncoder passwordEncoder) {
 
